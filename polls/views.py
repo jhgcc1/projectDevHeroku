@@ -24,6 +24,7 @@ class createPost(APIView):
         user= request.user
         posts=Posts.objects.get(user=user)
         print(posts)
+        print(posts)
         return Response(posts)
         
 class UserCreate(generics.CreateAPIView):

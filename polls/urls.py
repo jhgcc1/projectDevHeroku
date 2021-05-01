@@ -10,4 +10,5 @@ urlpatterns = [
     path('create-user/', views.UserCreate.as_view()),
     path('add-post/',views.createPost.as_view()),
     path('posts/',views.createPostNew.as_view())
+    
 ]

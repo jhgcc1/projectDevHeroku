@@ -1,4 +1,5 @@
 export function httpRequest(bodyObject,url,method,headers={'Accept': 'application/json','Content-Type': 'application/json'}){
+    url="https://projectdev3.herokuapp.com/"+url;
     let TokenLocal=window.localStorage.getItem('tokenCapp');
     let headersExtra={};
     if(TokenLocal){

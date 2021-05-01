@@ -41,7 +41,7 @@ function Login() {
 
   function postOrGetPosts(requestType) {
     const data = compositionDataCreatePost(requestType,ChangeStoreFile.current,ChangeStoreLogin.current.postTitle);
-    httpRequest(data, 'http://localhost:8080/posts/', requestType, {}).then((getPostsResult) => {
+    httpRequest(data, 'posts/', requestType, {}).then((getPostsResult) => {
       console.log(getPostsResult);
       if (getPostsResult.erroLog) {
         alert(getPostsResult.erroLog);
@@ -77,14 +77,14 @@ function Login() {
   };
   async function loginApi() {
     let getToken = null;
-    getToken = await httpRequest(JSON.stringify(ChangeStoreLogin.current), 'http://localhost:8080/api-token-auth/', 'POST');
+    getToken = await httpRequest(JSON.stringify(ChangeStoreLogin.current), 'api-token-auth/', 'POST');
     tokenSetup(getToken);
     if (!getToken.erroLog) {
       postOrGetPosts('GET');
     }
   }
   async function registerApi() {
-    const responseCreateUser = await httpRequest(JSON.stringify(ChangeStoreLogin.current), 'http://localhost:8080/create-user/', 'POST');
+    const responseCreateUser = await httpRequest(JSON.stringify(ChangeStoreLogin.current), 'create-user/', 'POST');
     if (responseCreateUser.erroLog) {
       setinvalidLoggin(false);
       setinvalidRegistration(true);

@@ -29,7 +29,7 @@ function PostsView({ posts }) {
               height="220px"
               width="300px"
               style={{ objectFit: 'scale-down' }}
-              image={element.image}
+              image={eelement.image.replace("/build","")}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
